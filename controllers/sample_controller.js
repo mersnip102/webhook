@@ -1,5 +1,5 @@
 const util = require('./util');
-
+const dialogflow = require('@google-cloud/dialogflow-cx').v3Beta1;
 const handleSampleResponse = (req) => {
 
     console.log(req.body);

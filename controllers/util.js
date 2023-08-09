@@ -5,10 +5,35 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
     texts.forEach(text => {
         messages.push(
             {
-                text: {
-                    text: [text],
-                    redactedText: [text]
-                },
+                // text: {
+                //     text: [text],
+                //     redactedText: [text]
+                // },
+                payload: {
+                    "richContent": [
+                      [
+                        {
+                          "type": "list",
+                          "title": "List item 1 title",
+                          "subtitle": "List item 1 subtitle",
+                          "event": {
+                            "name": ""
+                          }
+                        },
+                        {
+                          "type": "divider"
+                        },
+                        {
+                          "type": "list",
+                          "title": "List item 2 title",
+                          "subtitle": "List item 2 subtitle",
+                          "event": {
+                            "name": ""
+                          }
+                        }
+                      ]
+                    ]
+                  },
                 responseType: 'HANDLER_PROMPT',
                 source: 'VIRTUAL_AGENT'
             }
@@ -32,6 +57,9 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
     if (targetPage !== '') {
         responseData['targetPage'] = targetPage;
     }
+
+    
+        
 
     return responseData
 };

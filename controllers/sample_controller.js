@@ -7,7 +7,7 @@ const handleSampleResponse = (req) => {
     return util.formatResponseForDialogflow(
         [
             'This is a sample response from webhook.',
-            'Another sample response.'
+            // 'Another sample response.'
         ],
         '',
         targetFlow,

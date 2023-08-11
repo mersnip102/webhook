@@ -6,44 +6,53 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
       messages.push(
         {
             text: {
-                text: [texts],
+                text: [texts[0]],
                 redactedText: [texts[0]]
-            },
-            payload:{
-              "richContent": [
-                [
-                  {
-                    "type": "chips",
-                    "options": [
-                      {
-                        "text": "Chip 1",
-                        "image": {
-                          "src": {
-                            "rawUrl": "https://example.com/images/logo.png"
-                          }
-                        },
-                        "link": "https://example.com"
-                      },
-                      {
-                        "text": "Chip 2",
-                        "image": {
-                          "src": {
-                            "rawUrl": "https://example.com/images/logo.png"
-                          }
-                        },
-                        "link": "https://example.com"
-                      }
-                    ]
-                  }
-                ]
-              ]
             },
            
             responseType: 'HANDLER_PROMPT',
             source: 'VIRTUAL_AGENT'
         }
     );
-       
+        messages.push(
+            {
+                // text: {
+                //     text: [text],
+                //     redactedText: [text]
+                // },
+                payload:{
+                  "richContent": [
+                    [
+                      {
+                        "type": "chips",
+                        "options": [
+                          {
+                            "text": "Chip 1",
+                            "image": {
+                              "src": {
+                                "rawUrl": "https://example.com/images/logo.png"
+                              }
+                            },
+                            "link": "https://example.com"
+                          },
+                          {
+                            "text": "Chip 2",
+                            "image": {
+                              "src": {
+                                "rawUrl": "https://example.com/images/logo.png"
+                              }
+                            },
+                            "link": "https://example.com"
+                          }
+                        ]
+                      }
+                    ]
+                  ]
+                },
+                responseType: 'HANDLER_PROMPT',
+                source: 'VIRTUAL_AGENT'
+            }
+        );
     // });
 
     let responseData = {

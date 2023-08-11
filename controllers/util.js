@@ -1,6 +1,7 @@
 const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage) => {
 
     messages = []
+    console.log("okeeeeeeeeeeeeeeeeeeeeeeeeeee". texts.length())
 
     // texts.forEach(text => {
       messages.push(
@@ -50,7 +51,7 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
     //         source: 'VIRTUAL_AGENT'
     // })
 
-    
+
         // messages.push(
         //     {
         //         // text: {

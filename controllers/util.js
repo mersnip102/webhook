@@ -3,10 +3,10 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
     messages = []
     messages.push(
       {
-          text: {
-              text: [texts[0]],
-              // redactedText: [text]
-          },
+          // text: {
+          //     text: [texts[0]],
+          //     // redactedText: [text]
+          // },
           payload: {
               "richContent": [
                 [

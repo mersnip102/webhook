@@ -1,7 +1,7 @@
 const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage) => {
 
     messages = []
-    console.log("okeeeeeeeeeeeeeeeeeeeeeeeeeee". texts.length())
+    console.log("okeeeeeeeeeeeeeeeeeeeeeeeeeee", texts.length())
 
     // texts.forEach(text => {
       messages.push(

@@ -14,10 +14,7 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
   );
   messages.push(
     {
-      // text: {
-      //     text: [texts[0]],
-      //     // redactedText: [text]
-      // },
+      
       payload: {
         "richContent": [
           [
@@ -25,22 +22,40 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
               "type": "chips",
               "options": [
                 {
-                  "text": "Chip 1",
+                  "text": "Xem báo cáo kết quả",
                   "image": {
                     "src": {
-                      "rawUrl": "https://example.com/images/logo.png"
+                      "rawUrl": "https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
                     }
                   },
-                  "link": "https://example.com"
+                  "link": "http://localhost:4200/pages/ket-qua-report"
                 },
                 {
-                  "text": "Chip 2",
+                  "text": "Báo cáo bằng hình ảnh",
                   "image": {
                     "src": {
-                      "rawUrl": "https://example.com/images/logo.png"
+                      "rawUrl": "https://freeiconshop.com/wp-content/uploads/edd/image-outline-filled.png"
                     }
                   },
-                  "link": "https://example.com"
+                  "link": "http://localhost:4200/pages/bao-cao-hinh-anh/lap-bao-cao"
+                },
+                {
+                  "text": "Xem báo cáo bằng hình ảnh",
+                  "image": {
+                    "src": {
+                      "rawUrl": "https://cdn-icons-png.flaticon.com/512/404/404621.png"
+                    }
+                  },
+                  "link": "http://localhost:4200/pages/thong-ke-so-lieu"
+                },
+                {
+                  "text": "Hướng dẫn",
+                  "image": {
+                    "src": {
+                      "rawUrl": "https://cdn-icons-png.flaticon.com/512/6747/6747196.png"
+                    }
+                  },
+                  "link": "https://google.com"
                 }
               ]
             }

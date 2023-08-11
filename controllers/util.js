@@ -36,6 +36,17 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
           source: 'VIRTUAL_AGENT'
       }
   );
+  messages.push(
+    {
+        text: {
+            text: [texts],
+            redactedText: [texts[0]]
+        },
+       
+        responseType: 'HANDLER_PROMPT',
+        source: 'VIRTUAL_AGENT'
+    }
+);
 
     // texts.forEach(text => {
     //     messages.push(

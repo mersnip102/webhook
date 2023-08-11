@@ -7,31 +7,31 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
               text: [texts[0]],
               // redactedText: [text]
           },
-          // payload: {
-          //     "richContent": [
-          //       [
-          //         {
-          //           "type": "list",
-          //           "title": "List item 1 title",
-          //           "subtitle": "List item 1 subtitle",
-          //           "event": {
-          //             "name": ""
-          //           }
-          //         },
-          //         {
-          //           "type": "divider"
-          //         },
-          //         {
-          //           "type": "list",
-          //           "title": "List item 2 title",
-          //           "subtitle": "List item 2 subtitle",
-          //           "event": {
-          //             "name": ""
-          //           }
-          //         }
-          //       ]
-          //     ]
-          //   },
+          payload: {
+              "richContent": [
+                [
+                  {
+                    "type": "list",
+                    "title": "List item 1 title",
+                    "subtitle": "List item 1 subtitle",
+                    "event": {
+                      "name": ""
+                    }
+                  },
+                  {
+                    "type": "divider"
+                  },
+                  {
+                    "type": "list",
+                    "title": "List item 2 title",
+                    "subtitle": "List item 2 subtitle",
+                    "event": {
+                      "name": ""
+                    }
+                  }
+                ]
+              ]
+            },
           responseType: 'HANDLER_PROMPT',
           source: 'VIRTUAL_AGENT'
       }

@@ -6,7 +6,7 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
       messages.push(
         {
             text: {
-                text: [texts[0]],
+                text: [texts],
                 redactedText: [texts[0]]
             },
            

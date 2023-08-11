@@ -2,43 +2,58 @@ const formatResponseForDialogflow = (texts, sessionInfo, targetFlow, targetPage)
 
     messages = []
 
-    texts.forEach(text => {
+    // texts.forEach(text => {
+      messages.push(
+        {
+            text: {
+                text: [text],
+                redactedText: [text]
+            },
+           
+            responseType: 'HANDLER_PROMPT',
+            source: 'VIRTUAL_AGENT'
+        }
+    );
         messages.push(
             {
                 // text: {
                 //     text: [text],
                 //     redactedText: [text]
                 // },
-                payload: {
-                    "richContent": [
-                      [
-                        {
-                          "type": "list",
-                          "title": "List item 1 title",
-                          "subtitle": "List item 1 subtitle",
-                          "event": {
-                            "name": ""
+                payload:{
+                  "richContent": [
+                    [
+                      {
+                        "type": "chips",
+                        "options": [
+                          {
+                            "text": "Chip 1",
+                            "image": {
+                              "src": {
+                                "rawUrl": "https://example.com/images/logo.png"
+                              }
+                            },
+                            "link": "https://example.com"
+                          },
+                          {
+                            "text": "Chip 2",
+                            "image": {
+                              "src": {
+                                "rawUrl": "https://example.com/images/logo.png"
+                              }
+                            },
+                            "link": "https://example.com"
                           }
-                        },
-                        {
-                          "type": "divider"
-                        },
-                        {
-                          "type": "list",
-                          "title": "List item 2 title",
-                          "subtitle": "List item 2 subtitle",
-                          "event": {
-                            "name": ""
-                          }
-                        }
-                      ]
+                        ]
+                      }
                     ]
-                  },
+                  ]
+                },
                 responseType: 'HANDLER_PROMPT',
                 source: 'VIRTUAL_AGENT'
             }
         );
-    });
+    // });
 
     let responseData = {
         fulfillment_response: {
